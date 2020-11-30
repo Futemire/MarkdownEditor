@@ -1,14 +1,18 @@
-# Markdown Editor
+# Forked Markdown Editor
+This Markdown Editor is a forked version that implements som changes to better support publishing markdown files as wiki pages in AzureDevOps.
+This was forked at commit 8028326ca710dd791cf629b382be776719b8caca; <br/>
+You can visit the original repository here [Markdown Editor](https://github.com/madskristensen/MarkdownEditor).
 
-[![Build status](https://ci.appveyor.com/api/projects/status/m07cnunnni8w82o5?svg=true)](https://ci.appveyor.com/project/madskristensen/markdowneditor)
+*Changes from original version*
+| Issue # | Changes | Affected Files |
+|:-------:|---------|----------------|
+| ?       | Changed symbol used to identify rendered components from **\`\`\`** to **:::** to match Azure rendering. | [InlineCodeCommandTarget.cs](src/Commands/InlineCodeCommandTarget.cs)  |
 
-Download this extension from the [VS Gallery](https://visualstudiogallery.msdn.microsoft.com/eaab33c3-437b-4918-8354-872dfe5d1bfe)
-or get the [CI build](http://vsixgallery.com/extension/9ca64947-e9ca-4543-bfb8-6cce9be19fd6/).
 
 ---------------------------------------
 
 A full featured Markdown editor with live preview and syntax highlighting.
-Supports GitHub flavored Markdown.
+Supports GitHub and Azure flavored Markdown.
 
 See the [change log](CHANGELOG.md) for changes and road map.
 
@@ -154,7 +158,7 @@ you can turn on automatic generation of a HTML file.
 It will wrap the output rendered markdown in a HTML template 
 that looks like this:
 
-```html
+:::html
 <!DOCTYPE html>
 <html>
 <head>
@@ -166,7 +170,7 @@ that looks like this:
 
 </body>
 </html>
-```
+:::
 
 You can provide your own HTML template by dropping a file with
 the name **md-template.html** in the same or parent folder to
